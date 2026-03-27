@@ -48,6 +48,14 @@ The goal was to understand core cloud security concepts such as IAM roles, least
 
 ---
 
+##  Security Decisions
+
+- IAM Role was used instead of access keys to avoid credential exposure
+- SSH access was restricted to minimize attack surface
+- Least privilege principle was applied to reduce potential blast radius
+
+---
+
 ##  Notes
 This project was created as part of my learning path towards becoming a Cloud Security Engineer.
 
