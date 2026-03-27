@@ -50,3 +50,21 @@ The goal was to understand core cloud security concepts such as IAM roles, least
 
 ##  Notes
 This project was created as part of my learning path towards becoming a Cloud Security Engineer.
+
+---
+
+##  Screenshots
+
+### EC2 Instance
+!<img width="1919" height="877" alt="my instance" src="https://github.com/user-attachments/assets/cc53e39a-b4cb-4f65-a569-fb1cfe3eceb0" />
+
+### Security Group
+!<img width="1919" height="878" alt="security groups" src="https://github.com/user-attachments/assets/756cb615-30c6-45a9-ba13-af2fc776d506" />
+
+### IAM Role
+!<img width="1900" height="876" alt="IAM Role Png" src="https://github.com/user-attachments/assets/4baea16d-9da7-4edd-9cd0-2444c8c178a0" />
+
+### Web Application
+!<img width="1917" height="881" alt="my secure-web" src="https://github.com/user-attachments/assets/aee3b709-5d51-4d1f-81fc-f4c6e0e4a712" />
+
+
