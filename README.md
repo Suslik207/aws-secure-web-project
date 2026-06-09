@@ -76,3 +76,41 @@ This project was created as part of my learning path towards becoming a Cloud Se
 !<img width="1917" height="881" alt="my secure-web" src="https://github.com/user-attachments/assets/aee3b709-5d51-4d1f-81fc-f4c6e0e4a712" />
 
 
+```mermaid
+flowchart LR
+
+user[User / Browser] --> internet[Internet]
+
+subgraph AWS[VPC - Custom Network]
+
+    subgraph VPC[VPC]
+    
+        subgraph PublicSubnet[Public Subnet]
+            ec2[EC2 t3.micro\nNginx Web Server]
+        end
+
+        subgraph IAM[IAM]
+            role[IAM Role for EC2\n(No Access Keys)]
+        end
+
+        subgraph S3[S3 Bucket]
+            bucket[Static Assets / Data]
+        end
+
+        subgraph Security[Security Groups]
+            sg1[Allow SSH - My IP only]
+            sg2[Allow HTTP 80 - Public]
+        end
+
+        cloudtrail[CloudTrail Logging]
+
+    end
+end
+
+internet --> ec2
+ec2 --> bucket
+ec2 --> role
+ec2 --> sg1
+ec2 --> sg2
+AWS --> cloudtrail
+```
