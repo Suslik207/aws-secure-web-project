@@ -79,38 +79,20 @@ This project was created as part of my learning path towards becoming a Cloud Se
 ```mermaid
 flowchart LR
 
-user[User / Browser] --> internet[Internet]
+User[User Browser] --> Internet
 
-subgraph AWS[VPC - Custom Network]
-
-    subgraph VPC[VPC]
-    
-        subgraph PublicSubnet[Public Subnet]
-            ec2[EC2 t3.micro\nNginx Web Server]
-        end
-
-        subgraph IAM[IAM]
-            role[IAM Role for EC2\n(No Access Keys)]
-        end
-
-        subgraph S3[S3 Bucket]
-            bucket[Static Assets / Data]
-        end
-
-        subgraph Security[Security Groups]
-            sg1[Allow SSH - My IP only]
-            sg2[Allow HTTP 80 - Public]
-        end
-
-        cloudtrail[CloudTrail Logging]
-
-    end
+subgraph AWS
+    EC2[EC2 Nginx Server]
+    S3[S3 Bucket]
+    IAM[IAM Role (No Keys)]
+    SG[Security Group]
+    CT[CloudTrail]
 end
 
-internet --> ec2
-ec2 --> bucket
-ec2 --> role
-ec2 --> sg1
-ec2 --> sg2
-AWS --> cloudtrail
+Internet --> EC2
+EC2 --> S3
+EC2 --> IAM
+EC2 --> SG
+
+CT --> EC2
 ```
