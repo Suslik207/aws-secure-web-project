@@ -75,24 +75,22 @@ This project was created as part of my learning path towards becoming a Cloud Se
 ### Web Application
 !<img width="1917" height="881" alt="my secure-web" src="https://github.com/user-attachments/assets/aee3b709-5d51-4d1f-81fc-f4c6e0e4a712" />
 
-
 ```mermaid
 flowchart LR
 
-User[User Browser] --> Internet
+User --> Internet
 
 subgraph AWS
-    EC2[EC2 Nginx Server]
-    S3[S3 Bucket]
-    IAM[IAM Role (No Keys)]
-    SG[Security Group]
-    CT[CloudTrail]
+    EC2 --> S3
+    EC2 --> IAM
+    EC2 --> SG
+    CT --> EC2
 end
 
-Internet --> EC2
-EC2 --> S3
-EC2 --> IAM
-EC2 --> SG
-
-CT --> EC2
+User[User] --> EC2[EC2]
+S3[S3]
+IAM[IAM Role]
+SG[Security Group]
+CT[CloudTrail]
+Internet[Internet]
 ```
